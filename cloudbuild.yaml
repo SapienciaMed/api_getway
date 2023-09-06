@@ -12,6 +12,4 @@ steps:
       - '--api=sapiencia-api-gateway-dev' 
       - '--openapi-spec=api-gateway.yaml'
 
-# Opciones de configuración adicionales según tus necesidades
-options:
-  timeout: 300s # Ajusta el tiempo de espera según la complejidad de tu despliegue.
+
