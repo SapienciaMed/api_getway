@@ -1,0 +1,17 @@
+steps:
+  # Puedes incluir otros pasos aquí según tus necesidades, como la construcción de tu código.
+  # Por ejemplo, si estás utilizando un marco de trabajo como Express.js, necesitarás un paso para construir tu aplicación.
+
+  # Despliegue del API Gateway
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'api-gateway'
+      - 'api-configs'
+      - 'create'
+      - 'sapiencia-api-gateway-dev-$SHORT_SHA' 
+      - '--api=sapiencia-api-gateway-dev' 
+      - '--openapi-spec=api-gateway.yaml'
+
+# Opciones de configuración adicionales según tus necesidades
+options:
+  timeout: 300s # Ajusta el tiempo de espera según la complejidad de tu despliegue.
