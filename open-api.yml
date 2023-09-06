@@ -1,4 +1,4 @@
-# openapi2-run.yaml
+## openapi2-run.yaml
 swagger: '2.0'
 info:
   title: api-gateway
