@@ -2,7 +2,7 @@ steps:
   # Puedes incluir otros pasos aquí según tus necesidades, como la construcción de tu código.
   # Por ejemplo, si estás utilizando un marco de trabajo como Express.js, necesitarás un paso para construir tu aplicación.
 
-  # Despliegue del API Gateway
+  # crear api config
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
       - 'api-gateway'
@@ -11,5 +11,18 @@ steps:
       - 'sapiencia-api-gateway-dev-$SHORT_SHA' 
       - '--api=sapiencia-api-gateway-dev' 
       - '--openapi-spec=api-gateway.yaml'
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'api-gateway'
+      - 'gateways'
+      - 'update'
+      - 'sapiencia-api-gateway-dev'
+      - '--location=us-central1'
+      - '--display-name="sapiencia-api-gateway-dev-$SHORT_SHA'
+      - '--api-config=sapiencia-api-gateway-dev-$SHORT_SHA'
+      - 'sapiencia-api-gateway-dev-$SHORT_SHA' 
+      - '--api=sapiencia-api-gateway-dev' 
+    
 
 
