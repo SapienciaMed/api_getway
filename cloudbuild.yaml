@@ -12,6 +12,14 @@ steps:
       - '--api=sapiencia-api-gateway-dev' 
       - '--openapi-spec=api-gateway.yaml'
 
+  # Paso para esperar (dormir)
+  - name: 'gcr.io/cloud-builders/bash'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        sleep 10 # Pausa de 10 segundos
+
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
       - 'api-gateway'
