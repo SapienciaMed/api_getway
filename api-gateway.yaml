@@ -1,7 +1,7 @@
-## openapi2-run.yaml
+# openapi2-run.yaml
 swagger: '2.0'
 info:
-  title: api-gateway
+  title: sapiencia-api-gateway-dev
   description: Sample API on API Gateway with a Cloud Run backend
   version: 1.0.0
 schemes:
@@ -11,17 +11,10 @@ produces:
 paths:
   /api/v1/auth/signin:
     post:
+      summary: Cloud Run hello world
+      operationId: hello
       x-google-backend:
         address: https://sapiencia-auth-api-ukyunq2uxa-uc.a.run.app/api/v1/auth/signin
-      responses:
-        '200':
-          description: A successful response
-          schema:
-            type: string
-  /api/v1/auth/recoverypassword:
-    post:
-      x-google-backend:
-        address: https://sapiencia-auth-api-ukyunq2uxa-uc.a.run.app/api/v1/auth/recoverypassword
       responses:
         '200':
           description: A successful response
