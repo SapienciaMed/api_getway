@@ -1,6 +1,5 @@
 steps:
-  # Puedes incluir otros pasos aquí según tus necesidades, como la construcción de tu código.
-  # Por ejemplo, si estás utilizando un marco de trabajo como Express.js, necesitarás un paso para construir tu aplicación.
+
   # crear api config
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
@@ -11,7 +10,7 @@ steps:
       - '--api=$_APIGATEWAY_NAME' 
       - '--openapi-spec=api-gateway.yaml'
 
-
+  # actualizar la apigateway
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
       - 'api-gateway'
