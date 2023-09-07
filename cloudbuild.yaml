@@ -7,8 +7,8 @@ steps:
       - 'api-gateway'
       - 'api-configs'
       - 'create'
-      - 'sapiencia-api-gateway-dev-$SHORT_SHA' 
-      - '--api=sapiencia-api-gateway-dev' 
+      - '{$_API_NAME}-$SHORT_SHA' 
+      - '--api=$_APIGATEWAY_NAME' 
       - '--openapi-spec=api-gateway.yaml'
 
 
@@ -19,9 +19,9 @@ steps:
       - 'update'
       - 'sapiencia-api-gateway-dev'
       - '--location=us-central1'
-      - '--display-name=sapiencia-api-gateway-dev-$SHORT_SHA'
-      - '--api-config=sapiencia-api-gateway-dev-$SHORT_SHA' 
-      - '--api=sapiencia-api-gateway-dev' 
+      - '--display-name={$_API_NAME}-$SHORT_SHA'
+      - '--api-config={$_API_NAME}-$SHORT_SHA' 
+      - '--api=$_APIGATEWAY_NAME' 
     
 
 
